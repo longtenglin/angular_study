@@ -1,0 +1,37 @@
+<main [class]="['zn-page-container', 'zn-flex1']">
+  <div [class]="['zn-div-title']">
+    <h1>API相关使用案例</h1>
+  </div>
+  <div [class]="['zn-div-show']">
+
+  </div>
+  <div [class]="['zn-div-text']">
+    <label>getInfo:</label>
+    <button (click)="getInfo()">getInfo</button>
+  </div>
+  <div [class]="['zn-content', 'zn-flex1']">
+    <ul [class]="['zn-ul-list']">
+      <li *ngFor="let apiInfo of apiList">
+        <span [class]="['name']">{{apiInfo.name}}</span>：
+        <span [class]="[apiInfo.success ? 'success' : 'fail']">{{apiInfo.success.toString().toUpperCase()}}</span>
+      </li>
+    </ul>
+    <div [class]="['zn-div-console', 'zn-flex-1']">
+      <ol>
+        <li>
+          <span class="zn-summarize-title"></span>
+          <span class="zn-summarize-success"></span>
+          <span class="zn-summarize-fail"></span>
+        </li>
+        <li>
+          <span class="zn-summarize-title"></span>
+          <span class="zn-summarize-success"></span>
+          <span class="zn-summarize-fail"></span>
+        </li>
+        <li>
+
+        </li>
+      </ol>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,50 @@
+<main [class]="['zn-page-container', 'zn-flex1']">
+  <div [class]="['zn-div-title']">
+    <h1>API相关使用案例</h1>
+  </div>
+  <div [class]="['zn-div-show']">
+    <tab class="zn-tab">
+      <pane id="pane_1" appConChild *ngIf="shouldShow === 0"></pane>
+      <div id="d_p_2">
+        子元素的子元素
+        <br/>
+        <pane id="pane_2" appConChild *ngIf="shouldShow == 1"></pane>
+      </div>
+      <div id="div_3" appConChild *ngIf="shouldShow == 2">3</div>
+    </tab>
+    <tab2 class="zn-tab2">
+      <pane id="1"></pane>
+      <pane id="2"></pane>
+      <pane id="3" *ngIf="shouldShowTab2">
+        <tab2>
+          <pane id="3_1">
+            <pane id="3_1_1"></pane>
+            <pane id="3_1_2"></pane>
+          </pane>
+          <pane id="3_2"></pane>
+        </tab2>
+      </pane>
+    </tab2>
+  </div>
+  <div [class]="['zn-div-text']">
+    <label>ContentChild:</label>
+    <button (click)="toggle()">Toggle</button>
+    <label>ContentChildren:</label>
+    <button (click)="toggleChildren()">Toggle</button>
+  </div>
+  <div [class]="['zn-content', 'zn-flex1']">
+    <ul [class]="['zn-ul-list']">
+      <li *ngFor="let apiInfo of apiList">
+        <span [class]="['name']">{{apiInfo.name}}</span>：
+        <span [class]="[apiInfo.success ? 'success' : 'fail']">{{apiInfo.success.toString().toUpperCase()}}</span>
+      </li>
+    </ul>
+    <div [class]="['zn-div-console', 'zn-flex-1']">
+      <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,28 @@
+<main class="zn-page-container zn-flex1">
+  <div class="zn-content">
+    <div class="zn-div-list card">
+      <h2 class="card-head">项目介绍</h2>
+      <div class="card-head">
+        <p>本工程是使用 ng create myapp 创建，但是这个由 AngularJS 官方创建的案例工程竟然与平时遇见的工程不一样，也许是一个 “非常” 简单的工程，搜索整个程序竟没有一个 "&#64;NgModule" 注解。</p>
+        <p>在我的理解中，按照 "&#64;NgModule" 注解的介绍，这应该是一个特别特别重要的注解，但是这个案例中竟然没有一处对如此重要的注解的简单使用教程，又显得这个注解并不重要。</p>
+      </div>
+    </div>
+    <div class="zn-div-list card">
+      <h2 class="card-head">特殊错误</h2>
+      <div class="card-head card">
+        <div class="card-head">
+          <span>1. 动画：报错如下：</span>
+        </div>
+        <div class="card-body">
+          <img src="assets/images/animate_err.png" alt="动画报错" height="188" width="1367"/>
+          <br/>
+          在 &#64;NgModule 中导入 "BrowserAnimationsModule" ，由于在本工程中，并无该注解，且工程全部采用独立组件的方式编写，所以在导入该类时需要使用其他函数引用 "importProvidersFrom(BrowserAnimationsModule)"
+          <br/>
+          前者网上搜索即可，后者查看本案例工程的 "app.config.ts"。
+          <img src="assets/images/appConfig_img.png" alt="app.config.ts">
+          <img src="assets/images/main_img.png" alt="main.ts">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

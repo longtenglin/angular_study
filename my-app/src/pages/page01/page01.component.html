@@ -1,0 +1,17 @@
+<main [class]="['zn-page01-container']">
+  <div [class]="['zn-div-title']">
+    <h1>生命周期函数，打开控制台点击按钮查看钩子函数执行顺序</h1>
+  </div>
+  <div [class]="['zn-div-show']">
+    {{count}}
+  </div>
+  <div [class]="['zn-div-count']">
+    <button [class]="['zn-count-add']"
+            (click)="add()">
+      {{countBtnText}}
+    </button>
+  </div>
+  <div [class]="['zn-div-console']">
+    {{consoleText}}
+  </div>
+</main>

@@ -1,0 +1,63 @@
+.app-page{
+  flex: 1;
+}
+
+.zn-page-container{
+  .zn-div-title {
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .zn-div-show {
+    height: 150px;
+    display: flex;
+    .zn-animate-com {
+      width: 150px;
+      border: 1px solid black;
+    }
+  }
+
+  .zn-div-text {
+    display: flex;
+    justify-content: center;
+    label {
+      padding-top: 2px;
+      line-height: 30px;
+    }
+    .zn-input-text {
+      width: 300px;
+      height: 30px;
+    }
+  }
+
+  .zn-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    ul {
+      margin: 0;
+      padding: 17px 0 0 25px;
+    }
+    li {
+      margin: 3px 0;
+    }
+    .zn-ul-list {
+      width: 300px;
+      border: 1px solid black;
+      font-weight: bold;
+      .success {
+        color: green;
+      }
+      .fail {
+        color: red;
+      }
+    }
+    .zn-div-console {
+      flex: 1;
+      border: 1px solid black;
+      overflow: scroll;
+      line-height: 30px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<main [class]="['zn-home']">
+  <div [class]="['zn-head']">
+    <h1>Head</h1>
+  </div>
+
+  <div [class]="['zn-body']">
+    <div [class]="['zn-navigation']">
+      <ul *ngFor="let item of routeArr"
+          [class]="['zn-navigation-item']">
+        <li [class]="['zn-route-btn']"
+            [routerLink]="[item.path]">
+          {{item.title}}
+        </li>
+      </ul>
+    </div>
+
+    <div [class]="['zn-content']">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>

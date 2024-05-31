@@ -1,0 +1,53 @@
+<main [class]="['zn-page-container', 'zn-flex1']">
+  <div [class]="['zn-div-title']">
+    <h1>API相关使用案例</h1>
+  </div>
+  <div [class]="['zn-div-show']">
+    <div class="zn-show-1">
+      {{inputText1}}
+    </div>
+    <div class="zn-show-2">
+      {{inputText1_ngModel.value}}
+    </div>
+  </div>
+  <div [class]="['zn-div-text']">
+    <label>[(ngModel)]输入框： </label>
+    <input [class]="['zn-input-text']"
+           [type]="typeValue"
+           [(ngModel)]="inputText1"
+           #inputText1_ngModel="ngModel"
+           appGetType/>
+    <label>[ngModel]输入框： </label>
+    <input [class]="['zn-input-text']"
+           type="text"
+           [ngModel]="inputText2"
+           appGetType/>
+    <label>HostListener： </label>
+    <button [class]="['zn-btn-count']" (click)="clickFunc($event)">
+      NgModel
+    </button>
+  </div>
+  <div [class]="['zn-content', 'zn-flex1']">
+    <ul [class]="['zn-ul-list']">
+      <li *ngFor="let apiInfo of apiList">
+        <span [class]="['name']">{{apiInfo.name}}</span>：
+        <span [class]="[apiInfo.success ? 'success' : 'fail']">{{apiInfo.success.toString().toUpperCase()}}</span>
+      </li>
+    </ul>
+    <div [class]="['zn-div-console', 'zn-flex-1']">
+      <ol>
+        <li>
+          &#64;Attribute() 与 &#64;Input() 的区别：Attribute只能在构造函数中使用，且只能获取到元素初始化的属性值，当使用动态参数设置属性值时，便无法获取到了。因为它不能获取到元素属性值的更新。
+          Input 装饰器可以用来获取元素的属性值，并且它可以监听到属性值的更新。
+        </li>
+        <li>
+          &#64;HostListener('click', '$event') 与 (click)="onClickFunc()" 方式触发事件的区别：HostListener 是事件的监听器，它监听的是整个组件的某个事件，比如点击事件，也就是说只要是在组件内的区域，点击哪里都可以触发。
+          而 (click)="onClickFunc()" 这种方式绑定点击事件函数，往往这种方式是与标签相关联的，要实现点击组件所有区域的事件，需要将事件绑定到组件的根元素。其中还会发生事件冒泡和事件捕获的问题。
+        </li>
+        <li>
+          [(ngModel)] 与 [ngModel] 的区别：前者双向绑定，后者单项绑定。即：[()] 更新画面中的值，领域模型也会同步更新，更新领域模型画面中的值也会更新。而后者 [] 只能通过更新领域模型的值更新画面。
+        </li>
+      </ol>
+    </div>
+  </div>
+</main>

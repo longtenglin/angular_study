@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.app-page-flex-1{
+  flex: 1;
+}
+
+.app-page-flex {
+  display: flex;
+}
+
+.zn-flex {
+  display: flex;
+}
+
+.zn-flex-1 {
+  flex: 1;
+}
+
+.zn-flex1 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.zn-summarize-title {
+  font-weight: bold;
+}
+
+.zn-summarize-success {
+  font-weight: bold;
+  padding: 0 0 0 10px;
+  color: green;
+}
+
+.zn-summarize-fail {
+  font-weight: bold;
+  padding: 0 0 0 10px;
+  color: red;
+}
+
+.zn-bg-red {
+  background: red;
+}
+
+.zn-show-height {
+  height: 150px;
+  width: 150px;
+}

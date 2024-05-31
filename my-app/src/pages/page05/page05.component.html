@@ -1,0 +1,56 @@
+<main [class]="['zn-page-container', 'zn-flex1']">
+  <div [class]="['zn-div-title']">
+    <h1>API相关使用案例</h1>
+  </div>
+  <div [class]="['zn-div-show']">
+    <app-my-animate class="zn-animate-com" [isStart]="isStart[1]"></app-my-animate>
+    <app-my-animate2 class="zn-animate-com" [isStart]="isStart[2]"></app-my-animate2>
+    <app-my-animate3 class="zn-animate-com" [isStart]="isStart[3]"></app-my-animate3>
+    <app-my-animate4 class="zn-animate-com" [isStart]="isStart[4]"></app-my-animate4>
+    <app-my-animate5 class="zn-animate-com" [isStart]="isStart[5]"></app-my-animate5>
+    <app-my-animate6 class="zn-animate-com" [isStart]="isStart[6]"></app-my-animate6>
+    <app-my-animate7 class="zn-animate-com" [isStart]="isStart[7]"></app-my-animate7>
+    <app-my-animate8 class="zn-animate-com" [isStart]="isStart[8]"></app-my-animate8>
+  </div>
+  <div [class]="['zn-div-text']">
+    <label>AnimateAll:</label>
+    <button (click)="isStartFuncAll()">animate</button>
+    <label>state:</label>
+    <button (click)="isStartFunc(1)">state</button>
+    <label>sequence:</label>
+    <button (click)="isStartFunc(2)">sequence</button>
+    <label>group:</label>
+    <button (click)="isStartFunc(3)">group</button>
+    <label>keyframes:</label>
+    <button (click)="isStartFunc(4)">keyframes</button>
+    <label>query:</label>
+    <button (click)="isStartFunc(5)">query</button>
+    <label>animateChild:</label>
+    <button (click)="isStartFunc(6)">animateChild</button>
+    <label>stagger:</label>
+    <button (click)="isStartFunc(7)">stagger</button>
+    <label>useAnimation:</label>
+    <button (click)="isStartFunc(8)">useAnimation</button>
+  </div>
+  <div [class]="['zn-content', 'zn-flex1']">
+    <ul [class]="['zn-ul-list']">
+      <li *ngFor="let apiInfo of apiList">
+        <span [class]="['name']">{{apiInfo.name}}</span>：
+        <span [class]="[apiInfo.success ? 'success' : 'fail']">{{apiInfo.success.toString().toUpperCase()}}</span>
+      </li>
+    </ul>
+    <div [class]="['zn-div-console', 'zn-flex-1']">
+      <ol>
+        <li>
+          animateChild 与 query: animateChild 必须要与 query 配合使用，但是 query 单独使用也能做到触发子动画。所以显得 animateChild 有些多余。
+          在测试过程中发现，当子动画使用 trigger 定义的指令时，此时运行动画，只有父动画在运行，子动画不会运行。需要两个函数搭配使用才能使子动画运行。然而，如果子动画是使用 query 定义的，这时候父动画与子动画都可以运行。
+          个人理解：我猜测，当动画指令可以复用时，两者搭配使用更简洁。避免了每次都使用 query 单独定义相同的动画。
+        </li>
+        <li>
+          stagger: 该函数依然需要与 query 搭配使用。需要注意的是，stagger 设置的延时并不是针对两个 query 函数之间，而是一个 query 函数查询出的元素数组之间会延时执行。比如：query('div', ...)可以查询到三个 div ，那么这三个div动画循序执行之间会有延时。
+        </li>
+        <li></li>
+      </ol>
+    </div>
+  </div>
+</main>

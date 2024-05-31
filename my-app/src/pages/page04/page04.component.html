@@ -1,0 +1,38 @@
+<main [class]="['zn-page-container', 'zn-flex1']">
+  <div [class]="['zn-div-title']">
+    <h1>API相关使用案例</h1>
+  </div>
+  <div [class]="['zn-div-show']">
+  </div>
+  <div [class]="['zn-div-text']">
+    <label>ContentChild:</label>
+    <button (click)="clickFunc()">Toggle</button>
+    <label>ContentChildren:</label>
+    <button (click)="clickFunc()">Toggle</button>
+  </div>
+  <div [class]="['zn-content', 'zn-flex1']">
+    <ul [class]="['zn-ul-list']">
+      <li *ngFor="let apiInfo of apiList">
+        <span [class]="['name']">{{apiInfo.name}}</span>：
+        <span [class]="[apiInfo.success ? 'success' : 'fail']">{{apiInfo.success.toString().toUpperCase()}}</span>
+      </li>
+    </ul>
+    <div [class]="['zn-div-console', 'zn-flex-1']">
+      <ol>
+        <li>
+          <span class="zn-summarize-title">&#64;Injectable 与 Inject:</span>
+          <span class="zn-summarize-success">注解与类创建相关 DI Token 已经成功。</span>
+          <span class="zn-summarize-fail">但是如何使用始终不得而知，没有参悟透。提供了两种使用方式，不知道是否正确。</span>
+        </li>
+        <li>
+          <span class="zn-summarize-title">&#64;NgModule:</span>
+          <span class="zn-summarize-success"></span>
+          <span class="zn-summarize-fail">完全理解不了如何使用该注解。也完全理解不了该注解的作用。</span>
+        </li>
+        <li>
+
+        </li>
+      </ol>
+    </div>
+  </div>
+</main>
