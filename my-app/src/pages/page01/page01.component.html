@@ -12,6 +12,14 @@
     </button>
   </div>
   <div [class]="['zn-div-console']">
-    {{consoleText}}
+    <div class="zn-div-console-item"
+         *ngFor="let item of consoleLogArr; index as indexIdx; first as isFirst; last as isLast">
+<!--      <div class="item-index">-->
+<!--        {{indexIdx}}-->
+<!--      </div>-->
+      <div [class]="indexIdx % 2 === 0 ? 'item-log bg-double' : 'item-log bg-single'">
+        {{item}}
+      </div>
+    </div>
   </div>
 </main>
