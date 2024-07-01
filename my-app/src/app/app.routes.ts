@@ -10,6 +10,7 @@ import {OtherAnswerComponent} from "../pages/otherAnswer/OtherAnswer.component";
 import {Page05Component} from "../pages/page05/page05.component";
 import {Page06Component} from "../pages/page06/page06.component";
 import { Page07Component } from "../pages/page07/page07.component";
+import { Page08Component } from "../pages/page08/page08.component";
 
 export const routes: Routes = [
   {
@@ -53,7 +54,7 @@ export const routes: Routes = [
       }
       , {
         path: 'page08'
-        , component: E404Component
+        , component: Page08Component
         , title: 'Page08_API 使用案例'
       }
       , {
