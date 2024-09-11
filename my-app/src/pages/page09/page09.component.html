@@ -1,0 +1,48 @@
+<main [class]="['zn-page-container', 'zn-flex1']">
+  <div [class]="['zn-div-title']">
+    <h1>Mat 组件的相关使用案例</h1>
+  </div>
+  <div [class]="['zn-div-show']">
+	  <div class="zn-09-select">
+		  <select>
+			  <option>1111</option>
+			  <option>2222</option>
+			  <option disabled>3333</option>
+			  <option>4444</option>
+		  </select>
+	  </div>
+  </div>
+  <div [class]="['zn-div-text']">
+    <label>添加一个文本框:</label>
+    <button>addInputBox</button>
+  </div>
+  <div [class]="['zn-content', 'zn-flex1']">
+    <ul [class]="['zn-ul-list']">
+      <li *ngFor="let apiInfo of apiList">
+        <span [class]="['name']">{{apiInfo.name}}</span>：
+        <span [class]="[apiInfo.success ? 'success' : 'fail']">{{apiInfo.success.toString().toUpperCase()}}</span>
+      </li>
+    </ul>
+    <div [class]="['zn-div-console', 'zn-flex-1']">
+      <ol>
+        <li>
+          <span class="zn-summarize-title">动态植入HTML:</span>
+          <span class="zn-summarize-success">innerHTML: 将被植入的HTML代码定义于 ts 文件中，使用函数的方式在渲染时植入到相关元素中</span>
+          <span class="zn-summarize-fail"></span>
+        </li>
+        <li>
+          <span class="zn-summarize-title"></span>
+          <span class="zn-summarize-success"></span>
+          <span class="zn-summarize-fail"></span>
+        </li>
+        <li>
+
+        </li>
+      </ol>
+    </div>
+  </div>
+</main>
+
+<ng-template #znCusTemplate>
+
+</ng-template>

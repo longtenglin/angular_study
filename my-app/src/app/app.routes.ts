@@ -11,6 +11,8 @@ import {Page05Component} from "../pages/page05/page05.component";
 import {Page06Component} from "../pages/page06/page06.component";
 import { Page07Component } from "../pages/page07/page07.component";
 import { Page08Component } from "../pages/page08/page08.component";
+import { Page09Component } from "../pages/page09/page09.component";
+import { Page10Component } from "../pages/page10/page10.component";
 
 export const routes: Routes = [
   {
@@ -59,13 +61,18 @@ export const routes: Routes = [
       }
       , {
         path: 'page09'
-        , component: E404Component
-        , title: 'Page09_API 使用案例'
+        , component: Page09Component
+        , title: 'Page09_API Mat组件的使用案例'
       }
       , {
         path: 'page10'
+        , component: Page10Component
+        , title: 'Page10_API AWS S3'
+      }
+      , {
+        path: 'page12'
         , component: E404Component
-        , title: 'Page10_API 使用案例'
+        , title: 'Page12_API 使用案例'
       }
       , {
         path: 'page11'
