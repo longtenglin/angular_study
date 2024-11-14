@@ -14,7 +14,7 @@ phases:
 
   post_build:
     commands:
-      - ll -a
+      - ls -a
       - pwd
 artifacts:
   files:
