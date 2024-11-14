@@ -18,5 +18,5 @@ phases:
       - pwd
 artifacts:
   files:
-    - '**/dist/*'
+    - '**/*'
     - 'appsepc.yml'
