@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    - cd my-app
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm install
+      - npm build
+
+artifacts:
+  files:
+    - dist/*
+    - appsepc.yml
