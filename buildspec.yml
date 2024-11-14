@@ -2,8 +2,9 @@ version: 0.2
 
 phases:
   pre_build:
-    - node -v
-    - npm -v
+    commands:
+      - node -v
+      - npm -v
   build:
     commands:
       - echo Build started on `date`
