@@ -1,20 +1,9 @@
 version: 0.2
+os: linux
 
-phases:
-  install:
-    commands:
-      - node -v
-      - npm -v
+files:
+  - source: /
+    destination: /home/ec2-user/destination/directory
 
-  build:
-    commands:
-      - ls -la
-      - ls -la dist
-      - aws s3 cp dist s3://ap-test-logs/angular-study/ --recursive
-
-#files:
-#  - source: /
-#    destination: /root/destination/directory
-#
-#file_exists_behavior: OVERWRITE
+file_exists_behavior: OVERWRITE
 
