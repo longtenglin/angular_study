@@ -2,10 +2,12 @@ version: 0.2
 
 phases:
   pre_build:
-    - cd my-app
+    - node -v
+    - npm -v
   build:
     commands:
       - echo Build started on `date`
+      - cd my-app
       - npm install
       - npm build
 
