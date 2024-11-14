@@ -5,7 +5,8 @@ phases:
     commands:
       - node -v
       - npm -v
-      - npm install -g n
+      - n 20.14.0
+      - npm install -g npm@10.7.0
       - node -v
       - npm -v
   build:
