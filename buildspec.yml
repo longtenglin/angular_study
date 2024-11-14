@@ -12,6 +12,10 @@ phases:
       - npm install
       - npm run build
 
+  post_build:
+    commands:
+      - ll -a
+      - pwd
 artifacts:
   files:
     - 'my-app/dist/*'
