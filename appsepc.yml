@@ -1,7 +1,7 @@
 version: 0.2
 
 files:
-  - source: /my-app/dist
+  - source: /
     destination: /root/destination/directory
 
 file_exists_behavior: OVERWRITE
