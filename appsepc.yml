@@ -4,6 +4,3 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/destination/directory
-
-file_exists_behavior: OVERWRITE
-
