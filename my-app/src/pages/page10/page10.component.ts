@@ -33,7 +33,7 @@ export class Page10Component {
   createPresignedUrlWithClient = ({ region, bucket, key }: any) => {
     const client = new S3Client({
       region,
-      credentials: {accessKeyId: "AKIAX3DNHYXXXXXXXXX", secretAccessKey: "AMfu+HFyXNZXXXXXXXXXXXXXXXXXXXXXXXXXXX"}
+      credentials: {accessKeyId: 'xxxxxxxx', secretAccessKey: 'xxxxxxx'},
     });
     const command = new PutObjectCommand({ Bucket: bucket, Key: key });
     return getSignedUrl(client, command, { expiresIn: 3600 });
@@ -49,7 +49,7 @@ export class Page10Component {
     params.url = await this.createPresignedUrlWithClient({
       region: "us-east-1",
       bucket: "ap-test-logs-2",
-      key: "logs3.txt"
+      key: "conlog_2024092610-2024092614_1.txt"
     })
 
     this.httpClient.put(params.url, params.data, {
